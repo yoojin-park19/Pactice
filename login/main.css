@@ -1,0 +1,141 @@
+/* util */
+@font-face {
+    font-family: spoqa;
+    src: url(./SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.ttf);
+}
+
+body {
+    width: 520px;
+    height: 712px;
+    font-family: Spoqa Han Sans Neo;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+}
+
+/* header */
+.header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.header .close {
+    float: right;
+    background: url(./img/close2.png) no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    border: none;
+    text-indent: -9999px;
+    vertical-align: top;
+    margin-top: -15px;
+}
+
+/* section1 - cont-login */
+.cont-login {
+    padding:26px 24px;               
+}
+.cont-login p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;  
+}
+.cont-login .info-login input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.cont-login .info-login .check-box{
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.cont-login .info-login label {
+    display: flex;
+    color: #767676;
+    align-items: center;
+    margin: 10px 5px;
+    font-weight: 500;
+}
+.cont-login .info-login .btn-login{
+    width: 100%;
+    height: 50px;
+    background-color: #2F80ED;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+/* find form */
+
+.find {
+    text-align: center;
+    margin-top: 10px;
+}
+.find a{
+    font-size: 14px;
+    font-weight: 400;
+    color: #767676;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.find .find-pw::before {
+    content: '|';
+    margin-right: 10px;
+}
+
+/* 또는 */
+.and {
+    margin: 0 20px;
+    display: flex;
+    font-size: 14px;
+    color: #767676;
+}
+.and::before {
+    content: url(./img/Rectangle59.png);
+    margin-right: 10px;
+}
+
+.and::after {
+    content: url(./img/Rectangle60.png);
+    margin-left: 10px;
+}
+.cont-other .list-other {
+    margin: 25px;
+}
+
+.cont-other .list-other a {
+    margin-bottom: 10px;
+    display: block;  
+    width: 100%;
+    height: 50px;
+    border: 1px solid #767676;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #767676;
+    display: flex;
+    align-items: center;
+}
+.cont-other .list-other img{
+    width: 22px;
+    height: 22px;
+    margin-right:  135px;
+    margin-left: 10px;
+}
+.cont-other .list-other .facebook {
+    border-color:  #2D9CDB;
+}
+.cont-other .list-other .naver {
+    border-color: #00BF18;
+}
+.cont-other .list-other .kakao {
+    border-color: #F2C94C;
+}
