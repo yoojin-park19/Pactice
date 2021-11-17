@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=b , initial-scale=1.0">
+    <title>네이버 회원가입</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container {
+            width: 350px;
+            height: 135px;
+            padding: 16px 16px 12px 17px;
+            background-color: #f7f9fa;
+            border: 1px solid #dae1e6;
+        }
+        .container {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .container p {
+            padding-left: 3px;
+            color: grey;
+            font-size: 12px;
+            line-height: 16px;
+        }
+        .link-login {
+            display: block;
+            padding: 15px 0;
+            margin-top: 11px;
+            background-color:#19ce60;
+            border: 1px solid #15c654;
+            border-radius: 2px;
+            text-align: center;
+            box-sizing: border-box;           
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .naver {
+            width: 60px;
+            height: 12px;
+            vertical-align: top;
+            margin-top: 3px;
+            margin-right: 5px;
+        }
+        .find {
+            float: left;
+            vertical-align: top;
+            margin-top: 12px;
+        }
+        .lock { 
+            width: 10px;
+            height: 14px;
+            margin: -1px 1px 1px;
+            vertical-align: top;
+            margin-top: 1px;
+        }
+        .find_id::after {
+            display: inline-block;
+            content: '';
+            width: 3px;
+            height: 3px;
+            background: #d7dce0;
+            border-radius: 10px;
+            vertical-align: 3px;
+            margin-left: 5px;
+
+        }
+        .login {
+            float: right;
+            font-size: 12px;
+            vertical-align: top;
+            margin-top: 11px;
+        }
+        .user {
+            width: 11px;
+            height: 11px;
+            margin: 2px 5px 0 0;
+        }
+        a {
+            text-decoration: none;
+            font-size: 12px;
+            color: #404040;
+        }
+    </style>
+</head>
+<body>
+    <article class="container">
+        <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+        <a href="" class="link-login"><img src="../images/title.png" alt="네이버" class="naver">로그인</a>
+        <section class="find">
+            <img src="../images/lock.png" alt="" class= "lock">
+            <a href="#" class="find_id">아이디</a>
+            <a href="#">비밀번호찾기</a>
+        </section>
+        <section class="login">
+            <img src="../images/user.png" alt="사용자" class="user">
+            <a href="#">회원가입</a>
+        </section>
+
+    </article>
+</body>
+</html>
