@@ -1,0 +1,230 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* util */
+/* ir은 img-replace */
+
+.ir {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 1px;
+    color: transparent;
+}
+/* 레이아웃 */
+body {
+    background-color: #EAE8FE;
+}
+
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0 28px;
+    padding-top: 247px;
+    margin-bottom: 200px;
+}
+.tit-app {
+    top: 0;
+    width: 100%;
+    max-width: 386px;
+    height: 180px;
+    background: no-repeat center / 100% 100% url(/resource/img/Logo_img.png);
+}
+
+
+/* 메뉴판 */
+
+.vending-machine {
+    width: 360px;
+    height: 545px;
+    padding: 31px 27px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.list-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.list-item .btn-item {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 94px;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,.5);
+    position: relative;
+}
+.list-item .btn-item:active::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: -2px;
+    left: -2px;
+    border: 3px solid #6327FE;
+    border-radius: 10px;
+} 
+.list-item .btn-item img {
+    width: 35px;
+    height: 65px;
+}
+.list-item .tit-item {
+    font-size: 9px;
+    line-height: 13px;
+    margin: 7px 0;
+}
+.list-item .txt-item {
+    padding: 5px 0;
+    background-color: #6327FE;
+    width:70px;
+    height: 22px;
+    border-radius: 50px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+}
+.vending-machine .list-item .sold-out::before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 8px;
+    background: no-repeat center / 58px 45px url(../img/Sold-out.png) rgba(0, 0, 0, 0.8);
+}
+
+
+/* 주문 */
+
+.cont-return {
+    display: flex;
+    margin: 20px 0 11px 0;
+    align-items: center;
+}
+.cont-return .info-balance {
+    width: 200px;
+    height: 33px;
+    background: #EAE8FE;
+    size: 14px;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.cont-return .txt-balance {
+    float: right;
+}
+.cont-return .btn-return {
+    width: 94px;
+    height: 33px;
+    border-radius: 5px;
+    margin-left: 12px;
+    border: 1px solid #BDBDBD;;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 13px;
+}
+.cont-put {
+    display: flex;
+    align-items: center;
+}
+.cont-put .inp-put {
+    width: 200px;
+    height: 33px;
+    font-size: 13px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #BDBDBD;;
+}
+.cont-put .btn-put {
+    width: 94px;
+    height: 33px;
+    border-radius: 5px;
+    margin-left: 12px;
+    font-size: 13px;
+    border: 1px solid #BDBDBD;;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 선택 메뉴 */
+.cont-get {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 11px;
+}
+.cont-get .list-item-staged {
+   overflow-y: scroll;
+    width: 200px;
+    height: 106px;
+    padding: 12px 18px 0 12px;
+    background-color: #EAE8FE;
+    border-radius: 10px;
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+}
+.cont-get .list-item-staged .item-staged {
+    padding: 8px;
+    background-color: #fff;
+    width: 170px;
+    height: 46px;
+    margin-bottom: 6px; 
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.list-item-staged .item-staged .img-item {
+    width: 18px;
+    height: 33px;
+}
+.list-item-staged .item-staged .txt-item {
+    margin-right: 28px;
+}
+.list-item-staged .item-staged .num-counter {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-get .btn-get {
+    width: 94px;
+    height: 106px;
+    background-color: #6327FE;
+    margin-left: 12px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+}
+
+
+/* 2번째 장 */
+.my-info {
+    width: 360px;
+    padding: 31px 0;
+    box-sizing: border-box;
+    background-color: #fff
+}
