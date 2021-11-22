@@ -169,34 +169,30 @@ body {
     margin-top: 11px;
 }
 .cont-get .list-item-staged {
-   overflow-y: scroll;
-    width: 200px;
+    overflow-y: scroll;
     height: 106px;
     padding: 12px 18px 0 12px;
-    background-color: #EAE8FE;
     border-radius: 10px;
     border: 1px solid #bdbdbd;
-    box-sizing: border-box;
+    background-color: #EAE8FE;
 }
 .cont-get .list-item-staged .item-staged {
-    padding: 8px;
     background-color: #fff;
-    width: 170px;
-    height: 46px;
+    padding: 8px;
     margin-bottom: 6px; 
     font-size: 9px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
+    justify-content: flex-start;
     border-radius: 10px;
 }
 .list-item-staged .item-staged .img-item {
     width: 18px;
     height: 33px;
+    margin-right: 8px;
 }
 .list-item-staged .item-staged .txt-item {
-    margin-right: 28px;
+    margin-right: 21px;
 }
 .list-item-staged .item-staged .num-counter {
     width: 30px;
@@ -223,8 +219,73 @@ body {
 
 /* 2번째 장 */
 .my-info {
-    width: 360px;
-    padding: 31px 0;
+    display: grid;
+    grid-template-columns: 360px;
+    grid-template-rows: repeat(2, auto);
     box-sizing: border-box;
-    background-color: #fff
+    gap: 20px;
+}
+.my-info .cont-mymoney {
+    grid-row: 1/2;
+    grid-column: 1/2; 
+    background-color: #fff;
+}
+.my-info .cont-mymoney .info-mymoney {
+    background-color: #EAE8FE;
+    margin: 9px 27px;
+    padding:0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.cont-mymoney .info-mymoney .txt-mymoney {
+    font-weight: 700;
+}
+
+.my-info .cont-myitems {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    padding: 25px 27px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.my-info .cont-myitems strong {
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+.cont-myitems .list-item-staged {
+    height: 364px;
+    background-color: #EAE8FE;
+    padding: 12px 18px 0 12px ;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #bdbdbd;
+}
+.cont-myitems .list-item-staged .item-staged {
+    background-color: #fff;
+    display: flex;
+    justify-content:space-between;
+    font-size: 9px;
+    align-items: flex-end;
+    padding: 8px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+.list-item-staged .item-staged .img-item {
+    margin-right: 10px;
+}
+.cont-myitems .list-item-staged .item-staged .txt-item {
+    margin-right: 127px;
+}
+.cont-myitems .txt-total {
+    margin: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    align-self: flex-end;
 }
