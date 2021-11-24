@@ -5,7 +5,22 @@
     font-weight: normal;
     font-style: normal;
 }
+@media screen and (max-width:480px ) {
+    .header h1 {
+        font-size: 24px;
+    }
+    .questions .question {
+        font-size: 18px;
+    }
+    .country-result p {
+        line-height: 20px;
+    }
 
+    .country-result .phlip {
+        width: 300px;
+        height: 200px;
+    }
+}
 /* index.html */
 
 /* animation */
@@ -184,7 +199,6 @@ body {
 
 /* Result */
 
-/* 6 */
 .country-result {
     padding: 10px;
     border: 1px solid darkslateblue;
