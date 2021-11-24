@@ -38,13 +38,13 @@ function result() {
     // Counter에 따라 다른 결과 페이지로 이동하기
     if (yes_counter == 10)
         location.href="result_6.html";
-    else if (8 <= yes_counter <= 9)
+    else if (8 <= yes_counter)
         location.href="result_5.html";
-    else if (6 <= yes_counter <= 7)
+    else if (6 <= yes_counter)
         location.href="result_4.html";
-    else if (4 <= yes_counter <= 5)
+    else if (4 <= yes_counter)
         location.href="result_3.html";
-    else if (2 <= yes_counter <= 3)
+    else if (2 <= yes_counter)
         location.href="result_2.html";
     else 
         location.href="result_1.html";      
