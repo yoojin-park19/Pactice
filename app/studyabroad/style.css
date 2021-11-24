@@ -6,7 +6,7 @@
     font-style: normal;
 }
 @media screen and (max-width:767px) {
-    .test-section h2, .test-section .name-title {
+    .test-section h1, .test-section .name-title {
         font-size: 32px;
     }
     .footer p {
