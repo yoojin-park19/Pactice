@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30letters_diary</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cont_write">
+            <p>오늘의 일기</p>
+            <textarea name="" id="textArea" cols="38" rows="5" onkeydown="count();" placeholder="오늘 하루는 어땠나요?"></textarea>
+            <span id="letters">100자</span>
+            <button id="myBtn">오늘의 일기끝!</button>
+        </div>
+        <div id="cont_read">
+        </div>
+    <script>
+        let btn = document.getElementById('myBtn');
+
+        function count(){
+            let textArea = document.getElementById('textArea').value;
+                if(textArea.length > 100) {
+                    textArea = textArea.substring(0,100); 
+                    document.getElementById('textArea').value = textArea;
+                }
+            btn.addEventListener('click', function save(){
+                document.getElementById('cont_read').innerText =textArea;
+                })
+            document.getElementById('letters').innerHTML = 99-textArea.length + '자 남았어요!';
+            return 
+            }
+        
+    </script>
+</body>
+</html>
