@@ -1,291 +1,275 @@
-* {
+@charset "utf-8";
+
+/* 유틸리티 */
+.ir{
+    display: block;
+    overflow: hidden;
+    position:absolute;
+    text-indent: -9999px;
+    line-height:0;
+    font-size: 1px;
+    color:transparent;
+}
+.img-item{
+    display: block;
+}
+
+/* 레이아웃 */
+body{
+    background-color: #EAE8FE;
+}
+
+#app{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; 
+    gap:0 28px; 
+    padding-top:248px;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* util */
-/* ir은 img-replace */
-
-.ir {
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    text-indent: -9999px;
-    line-height: 0;
-    font-size: 1px;
-    color: transparent;
-}
-/* 레이아웃 */
-body {
-    background-color: #EAE8FE;
+#app .vending-machine, #app .my-info{
+    width:360px;
+    background:#fff;
+    box-sizing: border-box;
 }
 
-#app {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0 28px;
-    padding-top: 247px;
-    margin-bottom: 200px;
-}
-.tit-app {
-    top: 0;
+#app .tit-app{
+    position:absolute;
+    top:0;
     width: 100%;
     max-width: 386px;
-    height: 180px;
-    background: no-repeat center / 100% 100% url(/resource/img/Logo_img.png);
+    height:180px;
+    background: no-repeat center / 100% 100% url(../img/Logo_img.png);
 }
 
-
-/* 메뉴판 */
-
-.vending-machine {
-    width: 360px;
-    height: 545px;
-    padding: 31px 27px;
-    box-sizing: border-box;
-    background-color: #fff;
+/* 자판기 스타일 */
+#app .vending-machine{
+    position: relative;
+    padding:31px 27px 28px; 
 }
-.list-item {
+
+/* 자판기 아이템 리스트 */
+.vending-machine .list-item{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
-.list-item .btn-item {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 94px;
+.vending-machine .list-item li{
+    position:relative;
+    width:30%;
     height: 130px;
     border-radius: 10px;
-    box-shadow: 0px 0px 4px rgba(0,0,0,.5);
-    position: relative;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
 }
-.list-item .btn-item:active::before {
+.vending-machine .list-item li.on:before{
     display: block;
     position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: -2px;
-    left: -2px;
+    content:'';
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
     border: 3px solid #6327FE;
     border-radius: 10px;
-} 
-.list-item .btn-item img {
-    width: 35px;
-    height: 65px;
-}
-.list-item .tit-item {
-    font-size: 9px;
-    line-height: 13px;
-    margin: 7px 0;
-}
-.list-item .txt-item {
-    padding: 5px 0;
-    background-color: #6327FE;
-    width:70px;
-    height: 22px;
-    border-radius: 50px;
-    font-size: 12px;
-    text-align: center;
-    color: #fff;
     box-sizing: border-box;
 }
-.vending-machine .list-item .sold-out::before {
+.vending-machine .list-item li.sold-out::before{
     display: block;
     position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    content:'';
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
     z-index: 1;
-    border-radius: 8px;
-    background: no-repeat center / 58px 45px url(../img/Sold-out.png) rgba(0, 0, 0, 0.8);
-}
-
-
-/* 주문 */
-
-.cont-return {
-    display: flex;
-    margin: 20px 0 11px 0;
-    align-items: center;
-}
-.cont-return .info-balance {
-    width: 200px;
-    height: 33px;
-    background: #EAE8FE;
-    size: 14px;
-    border-radius: 5px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-.cont-return .txt-balance {
-    float: right;
-}
-.cont-return .btn-return {
-    width: 94px;
-    height: 33px;
-    border-radius: 5px;
-    margin-left: 12px;
-    border: 1px solid #BDBDBD;;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 13px;
-}
-.cont-put {
-    display: flex;
-    align-items: center;
-}
-.cont-put .inp-put {
-    width: 200px;
-    height: 33px;
-    font-size: 13px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    border: 1px solid #BDBDBD;;
-}
-.cont-put .btn-put {
-    width: 94px;
-    height: 33px;
-    border-radius: 5px;
-    margin-left: 12px;
-    font-size: 13px;
-    border: 1px solid #BDBDBD;;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-/* 선택 메뉴 */
-.cont-get {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 11px;
-}
-.cont-get .list-item-staged {
-    overflow-y: scroll;
-    height: 106px;
-    padding: 12px 18px 0 12px;
     border-radius: 10px;
-    border: 1px solid #bdbdbd;
-    background-color: #EAE8FE;
+    background:no-repeat center/60px 46px url(../img/Sold-out.png) rgba(0, 0, 0, 0.8);
 }
-.cont-get .list-item-staged .item-staged {
-    background-color: #fff;
-    padding: 8px;
-    margin-bottom: 6px; 
-    font-size: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 10px;
-}
-.list-item-staged .item-staged .img-item {
-    width: 18px;
-    height: 33px;
-    margin-right: 8px;
-}
-.list-item-staged .item-staged .txt-item {
-    margin-right: 21px;
-}
-.list-item-staged .item-staged .num-counter {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cont-get .btn-get {
-    width: 94px;
-    height: 106px;
-    background-color: #6327FE;
-    margin-left: 12px;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    font-size: 13px;
-    border: none;
+.vending-machine .list-item li.sold-out{
+    pointer-events: none;
 }
 
+.vending-machine .list-item li:nth-child(3)~li{ 
+    margin-top:12px;
+}
+.vending-machine .btn-item{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.vending-machine .list-item .img-item{
+    width:36px;
+    height:65px;
+    margin:0 auto;
+}
+.vending-machine .tit-item{
+    display: block;
+    font-size:9px;
+    margin:7px 0;
+}
+.vending-machine .txt-price{
+    font-size:12px;
+    padding:2px 12px;
+    background-color:#6327FE;
+    border-radius: 50px;
+    color:#fff;
+}
 
-/* 2번째 장 */
-.my-info {
-    display: grid;
-    grid-template-columns: 360px;
-    grid-template-rows: repeat(2, auto);
-    box-sizing: border-box;
-    gap: 20px;
-}
-.my-info .cont-mymoney {
-    grid-row: 1/2;
-    grid-column: 1/2; 
-    background-color: #fff;
-}
-.my-info .cont-mymoney .info-mymoney {
-    background-color: #EAE8FE;
-    margin: 9px 27px;
-    padding:0 10px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 32px;
+/* 잔액 & 반환, 입금, 획득 스타일 */
+.vending-machine .cont-return, .vending-machine .cont-put, .vending-machine .cont-get{
     display: flex;
     justify-content: space-between;
+    margin-top:12px;
 }
-.cont-mymoney .info-mymoney .txt-mymoney {
+.cont-return .info-balance, .cont-put .inp-put, .cont-get .list-item-staged{
+    width:65%;
+    padding:6px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.cont-return .btn-return, .cont-put .btn-put, .cont-get .btn-get{
+    width: 30%;
+    font-size:13px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
+}
+.vending-machine .cont-return{
+    margin-top:20px;
+}
+.cont-return .info-balance{
+    overflow:hidden;
+    font-size:14px;
+    line-height: 20px;
+    background-color: #EAE8FE;
+}
+.info-balance .txt-balance{
+    float:right;
+}
+.cont-put .inp-put{
+    border: 1px solid #BDBDBD;
+    line-height: 19px;
+}
+.cont-get .btn-staged {
+    width: 100%;
+}
+.cont-get .btn-get{
+    font-weight: 700;
+    background-color: #6327FE;
+    color:#fff;
+}
+.cont-get .list-item-staged{
+    height:106px;
+    overflow-y: scroll;
+    border: 1px solid #BDBDBD;
+    background-color: #EAE8FE;
+}
+.list-item-staged li{
+    overflow: hidden;
+    padding:8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.list-item-staged li+li{
+    margin-top:6px;
+}
+.list-item-staged .img-item, .list-item-staged .txt-item{
+    float:left;
+}
+.list-item-staged .img-item{
+    width:18px;
+    height:33px;
+}
+.list-item-staged .txt-item{
+    margin-left:10px;
+    line-height: 33px;
+    font-size:9px;
+}
+.list-item-staged .num-counter{
+    display: flex;
+    float:right;
+    width:30px;
+    height:30px;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 나의 정보 */
+#app .my-info{
+    background-color: #EAE8FE;
+}
+/* 소지금 */
+.my-info .cont-mymoney{
+    padding:9px 27px;
+    background-color: #fff;
+}
+.cont-mymoney .info-mymoney{
+    padding:6px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+}
+
+.info-mymoney .txt-mymoney{
+    float:right;
     font-weight: 700;
 }
 
-.my-info .cont-myitems {
-    grid-row: 2/3;
-    grid-column: 1/2;
-    padding: 25px 27px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+/* 획득한 음료 */
+.my-info .cont-myitems{
+    margin-top:20px;
+    padding:25px 27px 32px;
+    background: #fff;
 }
-.my-info .cont-myitems strong {
+
+.cont-myitems .tit-myitem{
+    display: block;
+    text-align: center;
+    margin-bottom:13px;
+    font-size: 14px;
     font-weight: 700;
-    margin-bottom: 13px;
 }
-.cont-myitems .list-item-staged {
-    height: 364px;
+.cont-myitems .list-item-staged{
+    overflow-y: scroll;
+    height:364px;
+    padding:12px 12px 0;
     background-color: #EAE8FE;
-    padding: 12px 18px 0 12px ;
+    border: 1px solid #BDBDBD;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 1px solid #bdbdbd;
 }
-.cont-myitems .list-item-staged .item-staged {
-    background-color: #fff;
-    display: flex;
-    justify-content:space-between;
-    font-size: 9px;
-    align-items: flex-end;
-    padding: 8px;
-    margin-bottom: 6px;
-    border-radius: 5px;
-}
-.list-item-staged .item-staged .img-item {
-    margin-right: 10px;
-}
-.cont-myitems .list-item-staged .item-staged .txt-item {
-    margin-right: 127px;
-}
-.cont-myitems .txt-total {
-    margin: 6px;
+
+.cont-myitems .txt-total{
+    display: block;
+    text-align: right;
     font-size: 12px;
-    font-weight: 500;
-    align-self: flex-end;
+    margin-top:10px;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    body{
+        background-color: #fff;
+    }
+    #app{
+        padding-top:65px;
+    }
+    #app .tit-app{
+        width:166px;
+        height: 70px;
+    }
+    .my-info .cont-myitems{
+        margin-top:0;
+        padding: 31px 27px 32px;
+    }
 }

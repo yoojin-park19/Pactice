@@ -53,6 +53,7 @@ button{
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+	border: none;
 }
 .hidden-txt {
 	position: absolute;
