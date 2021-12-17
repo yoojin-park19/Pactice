@@ -57,25 +57,15 @@ body{
     justify-content: space-between;
     align-content: space-between;
 }
-
+.vending-machine .list-ite .btn-item {
+    cursor: pointer;
+}
 .vending-machine .list-item li{
     position:relative;
     width:30%;
     height: 130px;
     border-radius: 10px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
-}
-.vending-machine .list-item li.on:before{
-    display: block;
-    position: absolute;
-    content:'';
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    border: 3px solid #6327FE;
-    border-radius: 10px;
-    box-sizing: border-box;
 }
 .vending-machine .list-item li.sold-out::before{
     display: block;
@@ -155,6 +145,9 @@ body{
 }
 .cont-get .btn-staged {
     width: 100%;
+}
+.staged-origin, .staged-violet, .staged-yellow, .staged-cool,  .staged-green, .staged-orange {
+    display: none;
 }
 .cont-get .btn-get{
     font-weight: 700;

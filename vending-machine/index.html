@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
     
     <body>
@@ -22,43 +23,43 @@
             <section class="vending-machine">
                 <h2 class="ir">자판기 화면</h2>
                 <ul class="list-item">
-                    <li class="on">
-                        <button type="button" class="btn-item">
+                    <li>
+                        <button type="button" class="btn-item" id="btn_origin" >
                             <img src="./vending-machine_1/resource/img/Original_Cola.png" alt="" class="img-item">
                             <strong class="tit-item">Original Cola</strong>
                             <span class="txt-price">1000원</span>
                         </button>
                     </li>
                     <li class="sold-out">
-                        <button type="button" class="btn-item">
+                        <button type="button" class="btn-item" id="btn_violet">
                             <img src="./vending-machine_1/resource/img/Violet_Cola.png" alt="" class="img-item">
                             <strong class="tit-item">Violet Cola</strong>
                             <span class="txt-price">1000원</span>
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn-item">
+                        <button type="button" class="btn-item" id="btn_yellow">
                             <img src="./vending-machine_1/resource/img/Yellow_Cola.png" alt="" class="img-item">
                             <strong class="tit-item">Yellow Cola</strong>
                             <span class="txt-price">1000원</span>
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn-item">
+                        <button type="button" class="btn-item" id="btn_cool">
                             <img src="./vending-machine_1/resource/img/Cool_Cola.png" alt="" class="img-item">
                             <strong class="tit-item">Cool Cola</strong>
                             <span class="txt-price">1000원</span>
                         </button>
                     </li>
-                    <li class="on">
-                        <button type="button" class="btn-item">
+                    <li>
+                        <button type="button" class="btn-item" id="btn_green">
                             <img src="./vending-machine_1/resource/img/Green_Cola.png" alt="" class="img-item">
                             <strong class="tit-item">Green Cola</strong>
                             <span class="txt-price">1000원</span>
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn-item">
+                        <button type="button" class="btn-item" id="btn_orange">
                             <img src="./vending-machine_1/resource/img/Orange_Cola.png" alt="" class="img-item">
                             <strong class="tit-item">Orange Cola</strong>
                             <span class="txt-price">1000원</span>
@@ -68,43 +69,57 @@
                 <div class="cont-return">
                     <div class="info-balance">
                         잔액 :
-                        <span class="txt-balance">1,000원</span>
+                        <span class="txt-balance">0원</span>
                     </div>
                     <button type="button" class="btn-return">거스름돈 반환</button>
                 </div>
                 <div class="cont-put">
-                    <input class="inp-put" type="number" placeholder="입금액 입력" id="moneyPut">
-                    <button type="button" class="btn-put" id="btnPut">입금</button>
+                    <input class="inp-put" type="number" placeholder="입금액 입력" id="moneyIn">
+                    <button type="button" class="btn-put" id="btnIn">입금</button>
                 </div>
                 <div class="cont-get">
                     <strong class="ir">선택한 음료</strong>
                     <ul class="list-item-staged">
-                        <li>
+                        <li class="staged-origin">
                             <button type="button" class="btn-staged" data-item="Original Cola">
                                 <img src="./vending-machine_1/resource/img/Original_Cola.png" alt="" class="img-item">
                                 <strong class="txt-item">Original Cola</strong>
-                                <span class="num-counter">1</span>
+                                <span class="num-counter" id="count-origin1" >0</span>
                             </button>
                         </li>
-                        <li>
-                            <button type="button" class="btn-staged" data-item="Original Cola">
-                                <img src="./vending-machine_1/resource/img/Green_Cola.png" alt="" class="img-item">
-                                <strong class="txt-item">Green Cola</strong>
-                                <span class="num-counter">2</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="btn-staged" data-item="Original Cola">
-                                <img src="./vending-machine_1/resource/img/Orange_Cola.png" alt="" class="img-item">
-                                <strong class="txt-item">Orange Cola</strong>
-                                <span class="num-counter">1</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="btn-staged" data-item="Original Cola">
+                        <li class="staged-violet">
+                            <button type="button" class="btn-staged" data-item="Violet Cola">
                                 <img src="./vending-machine_1/resource/img/Violet_Cola.png" alt="" class="img-item">
                                 <strong class="txt-item">Violet Cola</strong>
-                                <span class="num-counter">5</span>
+                                <span class="num-counter takeCount" id="count-violet1">0</span>
+                            </button>
+                        </li>
+                        <li class="staged-yellow">
+                            <button type="button" class="btn-staged" data-item="Yellow_Cola">
+                                <img src="./vending-machine_1/resource/img/Yellow_Cola.png" alt="" class="img-item">
+                                <strong class="txt-item">Yellow Cola</strong>
+                                <span class="num-counter takeCount" id="count-yellow1" >0</span>
+                            </button>
+                        </li>
+                        <li class="staged-cool">
+                            <button type="button" class="btn-staged" data-item="Cool Cola">
+                                <img src="./vending-machine_1/resource/img/Cool_Cola.png" alt="" class="img-item">
+                                <strong class="txt-item">Cool Cola</strong>
+                                <span class="num-counter takeCount" id="count-cool1">0</span>
+                            </button>
+                        </li>
+                        <li class="staged-green">
+                            <button type="button" class="btn-staged" data-item="Green Cola">
+                                <img src="./vending-machine_1/resource/img/Green_Cola.png" alt="" class="img-item">
+                                <strong class="txt-item">Green Cola</strong>
+                                <span class="num-counter takeCount" id="count-green1">0</span>
+                            </button>
+                        </li>
+                        <li class="staged-orange">
+                            <button type="button" class="btn-staged" data-item="Orange Cola">
+                                <img src="./vending-machine_1/resource/img/Orange_Cola.png" alt="" class="img-item">
+                                <strong class="txt-item">Orange Cola</strong>
+                                <span class="num-counter takeCount" id="count-orange1">0</span>
                             </button>
                         </li>
                     </ul>
@@ -122,28 +137,38 @@
                 <div class="cont-myitems">
                     <strong class="tit-myitem">획득한 음료</strong>
                     <ul class="list-item-staged">
-                        <li>
+                        <li class="staged-origin">
                             <img src="./vending-machine_1/resource/img/Original_Cola.png" alt="" class="img-item">
                             <strong class="txt-item">Original_Cola</strong>
-                            <span class="num-counter">1</span>
+                            <span class="num-counter" id="count-origin">0</span>
                         </li>
-                        <li>
-                            <img src="./vending-machine_1/resource/img/Green_Cola.png" alt="" class="img-item">
-                            <strong class="txt-item">Green Cola</strong>
-                            <span class="num-counter">2</span>
-                        </li>
-                        <li>
-                            <img src="./vending-machine_1/resource/img/Orange_Cola.png" alt="" class="img-item">
-                            <strong class="txt-item">Orange Cola</strong>
-                            <span class="num-counter">1</span>
-                        </li>
-                        <li>
+                        <li class="staged-violet">
                             <img src="./vending-machine_1/resource/img/Violet_Cola.png" alt="" class="img-item">
                             <strong class="txt-item">Violet Cola</strong>
-                            <span class="num-counter">5</span>
+                            <span class="num-counter get-counter " id="count-violet">0</span>
+                        </li>
+                        <li class="staged-yellow">
+                            <img src="./vending-machine_1/resource/img/Yellow_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Yellow Cola</strong>
+                            <span class="num-counter get-counter" id="count-yellow">0</span>
+                        </li>
+                        <li class="staged-cool">
+                            <img src="./vending-machine_1/resource/img/Cool_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Cool Cola</strong>
+                            <span class="num-counter get-counter" id="count-cool">0</span>
+                        </li>
+                        <li class="staged-green">
+                            <img src="./vending-machine_1/resource/img/Green_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Green Cola</strong>
+                            <span class="num-counter get-counter" id="count-green">0</span>
+                        </li>
+                        <li class="staged-orange">
+                            <img src="./vending-machine_1/resource/img/Orange_Cola.png" alt="" class="img-item">
+                            <strong class="txt-item">Orange Cola</strong>
+                            <span class="num-counter get-counter" id="count-orange">0</span>
                         </li>
                     </ul>
-                    <strong class="txt-total">총금액 : 9,000원</strong>
+                    <strong class="txt-total" id="moneyBuy">총금액 : 원</strong>
                 </div>
             </section>
         </div>
