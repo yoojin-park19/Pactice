@@ -90,3 +90,44 @@ btnOrange.addEventListener('click', function addOrange() {
 })
 
 
+//  입금
+let btnIn = document.getElementById('btnIn');
+let totalMoney = 25000;
+
+btnIn.addEventListener('click',() => {
+    let moneyIn = parseInt(document.getElementById('moneyIn').value);
+    totalMoney = totalMoney + moneyIn;
+    document.getElementById('totalMoney').innerText = totalMoney + '원';
+})
+
+let btnGet = document.getElementById('btnGet');
+
+btnGet.addEventListener('click', function payment(){
+    if(totalMoney >= moneyBuy) {
+        totalMoney = totalMoney - moneyBuy;
+        document.getElementById('totalMoney').innerText = totalMoney + '원';
+    }
+    else {
+        alert('잔액이 부족합니다.')
+    }
+    
+})
+
+//  잔돈 받기
+
+let btnReturn = document.getElementById('btnReturn');
+let change = false;
+
+btnReturn.addEventListener('click',function refund () {
+    if (change == false) {
+        document.getElementById('textBalance').innerText = totalMoney +'원';
+        change =true;
+    }
+    else {
+        totalMoney = 0;
+        document.getElementById('textBalance').innerText = totalMoney +'원';
+        document.getElementById('totalMoney').innerText = totalMoney +'원';
+        change = true;
+    }
+
+})
