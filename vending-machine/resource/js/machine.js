@@ -1,3 +1,5 @@
+// 메뉴 선택
+
 let btnOrigin = document.getElementById('btn_origin');
 let countOrigin =0;
 let moneyBuy = 0;
@@ -90,6 +92,7 @@ btnOrange.addEventListener('click', function addOrange() {
 })
 
 
+
 //  입금
 let btnIn = document.getElementById('btnIn');
 let totalMoney = 25000;
@@ -106,12 +109,28 @@ btnGet.addEventListener('click', function payment(){
     if(totalMoney >= moneyBuy) {
         totalMoney = totalMoney - moneyBuy;
         document.getElementById('totalMoney').innerText = totalMoney + '원';
+        $('.staged-orange').css('display','none');
+        countOrange =0;
+        $('.staged-origin').css('display','none');
+        countOrigin = 0;
+        $('.staged-yellow').css('display','none');
+        countYellow = 0;
+        $('.staged-cool').css('display','none');
+        countCool = 0;
+        $('.staged-green').css('display','none');
+        countGreen = 0;
+        moneyBuy = 0;
+        document.getElementById('moneyBuy').innerText = '총금액:' + moneyBuy + '원';
     }
     else {
         alert('잔액이 부족합니다.')
-    }
-    
+    }  
 })
+
+
+
+
+
 
 //  잔돈 받기
 
